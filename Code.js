@@ -7,6 +7,7 @@ function doGet() {
 function processForm(formObject) {
   var cName = formObject.className;
   var sNames = formObject.classList
+  Logger.log(sNames);
   var sList = sNames.split(",");
   var formUrl = createForm(cName, sList);
   var template = HtmlService.createTemplateFromFile('Directions');

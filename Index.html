@@ -45,7 +45,6 @@
       }
 
       function handleFormSubmit(formObject) {
-        alert("This might take a moment!");
         var myRunner = google.script.run.withSuccessHandler(loadPage);
         myRunner.processForm(formObject);
       }
