@@ -7,8 +7,8 @@ function doGet() {
 function processForm(formObject) {
   var cName = formObject.className;
   var sNames = formObject.classList
-  Logger.log(sNames);
-  var sList = sNames.split(",");
+  console.log(sNames);
+  var sList = sNames.split("\n");
   var formUrl = createForm(cName, sList);
   var template = HtmlService.createTemplateFromFile('Directions');
   template.url = formUrl
@@ -45,7 +45,8 @@ function createForm(cName, sList) {
                 "3 = We have not worked together so I don't know how well it would go. Maybe fine, maybe not.",
                 "4 = Although we can work together, it requires more effort than normal to stay on task and collaborate.",
                 "5 = When we have worked together in the past, it has not gone well at all for some reason or another.",
-                "This is me!"]);
+                "This is me!"])
+          .setRequired(true);
   }          
   
   // Thank you message
